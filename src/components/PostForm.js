@@ -31,8 +31,11 @@ class PostForm extends Component {
         'content-type': 'application/json'
       },body: JSON.stringify(post)
     })
-    .then(res => res.json)
-    .then(data => console.log(data))
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      this.setState({ title: '', body: ''})
+    })
 
   }
 
